@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static',filename='sign_up.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="box" id="sign-up">
+		<a class="back" href="{{url_for('welcome_page')}}"><span class="back-arrow">Back</span></a>
+		<div class="brand">
+			<div class="logo">
+				<img src="{{url_for('static',filename='images/logo_bank.jpg')}}" alt="logo" height="90px" width="90px">
+			</div>
+			<h2 class="title">Sign up now</h2>
+		</div>
+		<div class="form">
+			<form>
+				<div class="row">
+					<input type="text" name="firstname" placeholder="First name">
+					<input type="text" name="lastname" placeholder="Last name">
+				</div>
+				<input type="email" name="email" placeholder="Email">
+				<input type="password" name="password" placeholder="Password">
+				<div class="checkbox">
+					<input type="checkbox" name="terms" id="terms">
+					<label for="terms" class="checkbox-label"></label>
+					<label for="terms" class="description">I agree with <a href="#terms">Terms & conditions</a></label>
+				</div>
+				<button type="submit" name="submit">Sign up for free</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

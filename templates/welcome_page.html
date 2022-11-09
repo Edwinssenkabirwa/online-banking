@@ -1,9 +1,10 @@
+{% extends 'base.html' %}
 {% block head %}
     <link rel="stylesheet" href="{{url_for('static',filename='welcome_page.css')}}">
 {% endblock %}
 
 {% block title %}
-
+    Welcome to Global pesa
 {%  endblock %}
 
 {% block content %}
@@ -18,10 +19,12 @@
 </svg>
 <div class="message-box">
   <h1>Global Pesa</h1>
-  <p>An online bank that will provide you with all financial services.</p>
+  <p>Your Global Pesa account is the key that will allow you to access a world of possibilities. 
+      Global Pesa connects your company to the global market whether you're sending or receiving money internationally, 
+      running your online business, or getting access to funding.</p>
   <div class="buttons-con">
     <div class="action-link-wrap">
-      <a href="" class="link-button">Signup</a>
+      <a href="{{ url_for('sign_up') }}" class="link-button">Signup</a>
       <a href="" class="link-button">Login</a>
     </div>
   </div>

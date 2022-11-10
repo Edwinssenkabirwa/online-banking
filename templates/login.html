@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% block head %}
     <link rel="stylesheet" href="{{url_for('static',filename='sign_up.css')}}">
@@ -12,22 +11,15 @@
 			<div class="logo">
 				<img src="{{url_for('static',filename='images/logo_bank.jpg')}}" alt="logo" height="90px" width="90px">
 			</div>
-			<h2 class="title">Sign up now</h2>
+			<h2 class="title">Log into your acount</h2>
 		</div>
-		<div class="form" >
-			<form method="POST">
-				<div class="row">
-					<input type="text" name="firstname" placeholder="First name">
-					<input type="text" name="lastname" placeholder="Last name">
-				</div>
+		<div class="form">
+			<form>
+				
 				<input type="email" name="email" placeholder="Email">
 				<input type="password" name="password" placeholder="Password">
-				<div class="checkbox">
-					<input type="checkbox" name="terms" id="terms">
-					<label for="terms" class="checkbox-label"></label>
-					<label for="terms" class="description">I agree with <a href="#terms">Terms & conditions</a></label>
-				</div>
-				<button type="submit" name="submit">Sign up for free</button>
+				
+				<button type="submit" name="submit">log in</button>
 			</form>
 		</div>
 	</div>

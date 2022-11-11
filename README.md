@@ -5,3 +5,8 @@ at lower costs
 users can create personal accounts and business accounts
 
 users can save, deposit, withdraw, and invest with gloabal pesa.
+
+# # requirements
+install the virtual env
+install flask
+mysql

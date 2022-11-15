@@ -1,6 +1,20 @@
 from flask import Flask,render_template, request
+from flask_sqlalchemy import SQLAlchemy
 
 app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///users.db'
+db =SQLAlchemy(app)
+
+def create_app():
+    app = Flask(__name__)
+    db.init_app(app)
+    return app
+
+class Users(db.Model):
+    id =db.Column(db.Integer(), primary_key=True)
+    first_name=db.Column(db.String(length=30), nullable=False)
+    second_name=db.Column(db.String(length=30), nullable=False)
+
 
 @app.route('/')
 @app.route('/welcome_page')
@@ -16,7 +30,7 @@ def sign_up():
         Email=request.form.get('email')
         Passwd=request.form.get('password')
 
-        for i in Firstname,Lastname:
+        for i in Firstname:
             numbers=('1','2','3','4','5','6','7','8','9','0')
             signs=('!','@','#','$','%','^','&','*')
             if i in numbers:

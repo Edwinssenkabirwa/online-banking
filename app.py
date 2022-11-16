@@ -2,18 +2,16 @@ from flask import Flask,render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///users.db'
+
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///bank.db'
 db =SQLAlchemy(app)
 
-def create_app():
-    app = Flask(__name__)
-    db.init_app(app)
-    return app
 
 class Users(db.Model):
     id =db.Column(db.Integer(), primary_key=True)
     first_name=db.Column(db.String(length=30), nullable=False)
     second_name=db.Column(db.String(length=30), nullable=False)
+
 
 
 @app.route('/')

@@ -67,6 +67,7 @@ def sign_up():
 @app.route('/login')
 def login():
     
+    
     return render_template('login.html')
 
 @app.route('/user_details')
